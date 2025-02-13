@@ -1,17 +1,33 @@
 let randomNumber = Math.floor(Math.random() * 10) + 1;
+let correctnumber = false
 let userGuess;
 let attempts = 0;
 console.log(randomNumber)
-// Prompt user for a number between 1 and 10, or type 999 to exit.
-userGuess = Number(prompt("Too high! Guess again:")); 
-// Create while loop that continues for as long as the user guesses are incorrect.
-// Loop should count the number of guesses.
-// Loop should exit if user enters 999 and not display "Too high!"
-// If the guess is too low, the user should be promped "Too low!" and be able to guess again.
-// If the guess is too high, the user should be promped 'Too high!" and be able to guess again.
-// If anything else is entered, the user should be prompted that their input is invalid and 
-// to guess again.
 
-// If the guess is correct, the user should be alerted of their win and 
-// be told the number of guesses they made.
-alert(`Congratulations, you've guessed it in [Number of attempts] tries!`); 
+userGuess = Number(prompt("Guess a number between 1 and 10, or type 999 to exit: ")); 
+// Create while loop that continues for as long as the user guesses are incorrect.
+
+while (correctnumber != true){
+    attempts += 1
+    if (userGuess == 999){
+        alert('You have exited the game'); 
+        break;
+    }
+    else if (userGuess == randomNumber){
+        alert(`Congratulations, you've guessed the number in ${attempts} tries!`); 
+        correctnumber = true
+        break
+    }
+    else if (userGuess < randomNumber){
+        alert("Too Low! Try Again!")
+        userGuess = Number(prompt("Guess a number between 1 and 10, or type 999 to exit: ")); 
+    }
+    else if (userGuess > randomNumber){
+        alert("Too High! Try Again")
+        userGuess = Number(prompt("Guess a number between 1 and 10, or type 999 to exit: ")); 
+    }
+    else{
+        alert("Wrong input, please try again")
+        userGuess = Number(prompt("Guess a number between 1 and 10, or type 999 to exit: ")); 
+    }
+}
