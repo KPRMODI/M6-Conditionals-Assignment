@@ -5,7 +5,6 @@ let attempts = 0;
 console.log(randomNumber)
 
 userGuess = Number(prompt("Guess a number between 1 and 10, or type 999 to exit: ")); 
-// Create while loop that continues for as long as the user guesses are incorrect.
 
 while (correctnumber != true){
     attempts += 1
