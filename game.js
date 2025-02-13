@@ -1,9 +1,9 @@
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 let userGuess;
 let attempts = 0;
-
+console.log(randomNumber)
 // Prompt user for a number between 1 and 10, or type 999 to exit.
-
+userGuess = Number(prompt("Too high! Guess again:")); 
 // Create while loop that continues for as long as the user guesses are incorrect.
 // Loop should count the number of guesses.
 // Loop should exit if user enters 999 and not display "Too high!"
@@ -14,3 +14,4 @@ let attempts = 0;
 
 // If the guess is correct, the user should be alerted of their win and 
 // be told the number of guesses they made.
+alert(`Congratulations, you've guessed it in [Number of attempts] tries!`); 
